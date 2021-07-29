@@ -24,7 +24,7 @@ namespace DataTypes
             Console.WriteLine($"\nСтруктура----------------------------\n");
             Console.WriteLine($"Первый метод\nПлощадь фигуры равна:{SquareStruct(figureStruct).Square}");
             Console.WriteLine($"Свойство Square:{figureStruct.Square}");
-            Console.WriteLine($"\nВторой метод\nПлощадь фигуры равна:{ChangeSquareStruct(figureStruct).Square}");
+            Console.WriteLine($"\nВторой метод\nПлощадь фигуры равна:{ChangeSquareStruct(ref figureStruct).Square}");
             Console.WriteLine($"Свойство Square:{figureStruct.Square}");
 
             Console.ReadLine();
@@ -51,7 +51,7 @@ namespace DataTypes
             return figure;
         }
 
-        public static FigureStruct ChangeSquareStruct(FigureStruct figure)
+        public static FigureStruct ChangeSquareStruct(ref FigureStruct figure)
         {
             double Square = (figure.SidesNumber * Math.Pow(figure.SideLength, 2)) / (4 * Math.Tan((Math.PI / figure.SidesNumber)));
             figure.Square = Square;
