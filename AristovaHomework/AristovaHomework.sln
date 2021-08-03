@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equivalence", "Equivalence\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "ListOfClients\Bank.csproj", "{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FiguresDictionary", "FiguresDictionary\FiguresDictionary.csproj", "{C31AA197-1382-4F1C-B491-0444B97679F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C31AA197-1382-4F1C-B491-0444B97679F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C31AA197-1382-4F1C-B491-0444B97679F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C31AA197-1382-4F1C-B491-0444B97679F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C31AA197-1382-4F1C-B491-0444B97679F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
