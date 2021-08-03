@@ -1,8 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
 
-namespace ListOfClients
+namespace Bank
 {
     public class Clients
     {
@@ -22,6 +21,7 @@ namespace ListOfClients
         }
 
         //метод поиска клиента по номеру паспорта
+        /*
         public void SearchByPassportID(int passportID)
         {
             IEnumerable<Client> query = from client in clients
@@ -37,8 +37,10 @@ namespace ListOfClients
             else
                 Console.WriteLine($"Client with passportID={passportID} was not found");
         }
+        */
 
         //метод выборки клиентов, у которых сумма на счету ниже определенного значения
+        /*
         public void AmmountLessThan(int ammount)
         {
             IEnumerable<Client> query = from client in clients
@@ -58,8 +60,10 @@ namespace ListOfClients
             else
                 Console.WriteLine($"Client with ammount less than {ammount} was not found");
         }
+        */
 
         //метод поиска клиента с минимальной суммой на счете
+        /*
         public void MinAmmount()
         {
             var min = clients.Min(n => n.Ammount);
@@ -78,12 +82,15 @@ namespace ListOfClients
                 }
             }
         }
+        */
 
         //метод подсчитывающий сумму денег у всех клиентов банка
+        /*
         public void SumAmmount()
         {
             var sum = clients.Sum(n => n.Ammount);
             Console.WriteLine($"The amount of money for all clients: {sum}");
         }
+        */
     }
 }

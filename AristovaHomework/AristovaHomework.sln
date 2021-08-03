@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BoxingUnboxing", "BoxingUnb
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Equivalence", "Equivalence\Equivalence.csproj", "{1C85C48F-4171-4770-BAAA-FDB429FCBA70}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ListOfClients", "ListOfClients\ListOfClients.csproj", "{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bank", "ListOfClients\Bank.csproj", "{6F187E32-34D7-4C5E-BA75-2CC86EB983B4}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

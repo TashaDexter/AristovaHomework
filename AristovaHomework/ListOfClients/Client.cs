@@ -1,12 +1,10 @@
-﻿namespace ListOfClients
+﻿namespace Bank
 {
     public class Client
     {
         public int PassportID { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
-        public int Ammount { get; set; }
-
 
         public override bool Equals(object obj)
         {
@@ -26,6 +24,11 @@
         public static bool operator !=(Client client1, Client client2)
         {
             return !client1.Equals(client2);
+        }
+
+        public override int GetHashCode()
+        {
+            return PassportID+FirstName.Length+LastName.Length;
         }
     }
 }
