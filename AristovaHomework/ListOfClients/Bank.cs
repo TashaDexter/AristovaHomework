@@ -3,18 +3,17 @@ using System.Collections.Generic;
 
 namespace Bank
 {
-    public class Clients
+    public class Bank 
     {
-        private List<Client> clients;
+        public Dictionary<Client, List<Account>> clients;
 
-        public Clients() { clients = new List<Client>(); }
+        public Bank() { clients = new Dictionary<Client, List<Account>>(); }
 
-        public void Add(Client client)
+        public void Add(Client client, List<Account> accounts)
         {
-            if (!(clients.Contains(client)))
+            if (!clients.ContainsKey(client))
             {
-                clients.Add(client);
-                Console.WriteLine($"Client with passportID={client.PassportID} was successfully added!");
+                clients.Add(client, accounts);
             }
             else
                 Console.WriteLine($"Error! Client with passportID={client.PassportID} already exists!");
