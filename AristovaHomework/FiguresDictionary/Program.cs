@@ -46,19 +46,26 @@ namespace FiguresDictionary
                 Console.WriteLine($"SideNumber={f.Key.SideNumber}, SideLength={f.Key.SideLength}");
             }
 
+            bool hasFigure = false; ;
             stopWatch.Start();
-            bool hasFigure=figureList.Contains(testFigure);
+            for (int i = 0; i < 1000; i++)
+            {
+                hasFigure = figureList.Contains(testFigure);
+            }
             stopWatch.Stop();
             TimeSpan ts = stopWatch.Elapsed;
-            Console.WriteLine($"FigureList contains testFigure: {hasFigure}, search time={ts.TotalMilliseconds}ms");
+            Console.WriteLine($"FigureList contains testFigure: {hasFigure}, search time={ts.TotalMilliseconds/1000}ms");
 
             stopWatch.Reset();
 
             stopWatch.Start();
-            hasFigure = figureDictionary.ContainsKey(testFigure);
+            for (int i = 0; i < 1000; i++)
+            {
+                hasFigure = figureDictionary.ContainsKey(testFigure);
+            }
             stopWatch.Stop();
             ts = stopWatch.Elapsed;
-            Console.WriteLine($"FigureDictionary contains testFigure: {hasFigure}, search time={ts.TotalMilliseconds}ms");
+            Console.WriteLine($"FigureDictionary contains testFigure: {hasFigure}, search time={ts.TotalMilliseconds/1000}ms");
 
             Console.ReadKey();
         }
