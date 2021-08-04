@@ -46,7 +46,7 @@ namespace FiguresDictionary
                 Console.WriteLine($"SideNumber={f.Key.SideNumber}, SideLength={f.Key.SideLength}");
             }
 
-            bool hasFigure = false; ;
+            bool hasFigure = false;
             stopWatch.Start();
             for (int i = 0; i < 1000; i++)
             {
