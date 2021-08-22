@@ -13,7 +13,7 @@ namespace Reflection
         static void Main(string[] args)
         {
             //подключаем сборку используя относительный путь
-            Assembly asm = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\..\\..\\..\\..\\Figure\\Figure\\bin\\Debug\\Figure.exe");
+            Assembly asm = Assembly.LoadFrom(Directory.GetCurrentDirectory() + "\\..\\..\\..\\Figure\\Figure\\bin\\Debug\\Figure.exe");
             Console.WriteLine($"Assembly fullname: {asm.FullName}");
 
             Type myType = asm.GetType("Figure.Figure", false, true);
@@ -29,7 +29,7 @@ namespace Reflection
                 prop.SetValue(obj, Convert.ToInt32(Console.ReadLine()));
             }
 
-            Console.WriteLine("Obj properties:");
+            Console.WriteLine("\nObj properties:");
             foreach (var property in properties)
             {
                 Console.WriteLine($"{property.Name} = {property.GetValue(obj)}");
@@ -52,6 +52,8 @@ namespace Reflection
 
             // вызываем метод, передаем ему значения для параметров и получаем результат
             method.Invoke(obj, new object[] { sideCount, sideLength });
+
+            Console.Read();
         }
     }
 }
