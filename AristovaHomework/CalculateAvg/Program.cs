@@ -9,62 +9,71 @@ namespace CalculateAvg
 {
     class Program
     {
+        public static double sum=0;
+
+        public static double avg;
+
+        public static int[] array = new int[100000000];
+
+        static object locker = new object();
         static void Main(string[] args)
         {
-
+            
             var Generator = new Faker();
+            for (int i = 0; i < 100000000; i++)
+            {
+                array[i] = Generator.Random.Number(0, 100);
+            }
+
             Stopwatch stopWatch = new Stopwatch();
 
             stopWatch.Start();
-
-            int[] array1 = new int[10000000];
-            for (int i = 0; i < array1.Length; i++)
+            for (int i = 0; i <array.Length; i++)
             {
-                array1[i] = Generator.Random.Number(0,100);
+                Sum(i);
             }
 
-            int[] array2 = new int[100000000];
-            for (int i = 0; i < array2.Length; i++)
-            {
-                array2[i] = Generator.Random.Number(0, 100);
-            }
-            
-            Console.WriteLine(array1.Average().ToString());
-            Console.WriteLine(array2.Average().ToString());
+            Console.WriteLine($"Sum:{sum}");
+            avg = sum / 100000000;
+            Console.WriteLine($"Avg:{avg}");
             stopWatch.Stop();
 
             TimeSpan ts = stopWatch.Elapsed;
             Console.WriteLine($"Time of calculating the average: {Convert.ToDecimal(ts.TotalMilliseconds / 100)} ms");
 
             stopWatch.Reset();
-            stopWatch.Start();
 
-            Parallel.Invoke(
-                () =>
-                {
-                    int[] array3 = new int[10000000];
-                    for (int i = 0; i < array3.Length; i++)
-                    {
-                        array3[i] = Generator.Random.Number(0, 100);
-                    }
-                    Console.WriteLine(array3.Average().ToString());
-                },
-                () =>
-                {
-                    int[] array4 = new int[100000000];
-                    for (int i = 0; i < array4.Length; i++)
-                    {
-                        array4[i] = Generator.Random.Number(0, 100);
-                    }
-                    Console.WriteLine(array4.Average().ToString());
-                });
+            sum = 0;
+            stopWatch.Start();
+            
+            Parallel.For(0, 12500000, Sum);
+            Parallel.For(12500000, 25000000, Sum);
+            Parallel.For(25000000, 27500000, Sum);
+            Parallel.For(27500000, 40000000, Sum);
+            Parallel.For(40000000, 52500000, Sum);
+            Parallel.For(52500000, 65000000, Sum);
+            Parallel.For(65000000, 77500000, Sum);
+            Parallel.For(77500000, 90000000, Sum);
+            Parallel.For(90000000, 100000000, Sum);
+            Console.WriteLine($"Sum:{sum}");
+
+            avg = sum / 100000000;
+
+            Console.WriteLine($"Avg:{avg}");
+            
 
             stopWatch.Stop();
 
             ts = stopWatch.Elapsed;
-            Console.WriteLine($"Time of calculating the average (in parallel): {Convert.ToDecimal(ts.TotalMilliseconds / 100)} ms");
+            Console.WriteLine($"Time of calculating the average (with parallel for): {Convert.ToDecimal(ts.TotalMilliseconds / 100)} ms");
 
             Console.ReadKey();
+        }
+
+        public static void Sum(int number)
+        {
+            lock (locker)
+                sum += array[number];
         }
 
     }

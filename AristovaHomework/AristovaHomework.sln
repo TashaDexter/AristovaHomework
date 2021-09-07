@@ -25,6 +25,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalculatorOperations.Tests"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalculateAvg", "CalculateAvg\CalculateAvg.csproj", "{7EF12119-C10F-4256-9C8D-15D431EC6BFC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThreadQueue", "ThreadQueue\ThreadQueue.csproj", "{09015D24-DE98-4836-9A89-EDBF84A44FA2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -71,6 +73,10 @@ Global
 		{7EF12119-C10F-4256-9C8D-15D431EC6BFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7EF12119-C10F-4256-9C8D-15D431EC6BFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7EF12119-C10F-4256-9C8D-15D431EC6BFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09015D24-DE98-4836-9A89-EDBF84A44FA2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09015D24-DE98-4836-9A89-EDBF84A44FA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09015D24-DE98-4836-9A89-EDBF84A44FA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09015D24-DE98-4836-9A89-EDBF84A44FA2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
